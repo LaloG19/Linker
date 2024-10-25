@@ -1,6 +1,6 @@
 <template>
-  <div class="register-container bg-blue-600">
-    <article class="flex px-4 bg-emerald-700 w-[700px]">
+  <div class="register-container">
+    <article class="flex px-4 w-[700px]">
       <RegisterForm />
     </article>
     <p v-if="error" class="text-red-500">{{ error }}</p>

@@ -1,6 +1,6 @@
 <template>
-  <div class="login-container bg-blue-600">
-    <article class="flex px-4 bg-emerald-700 w-[700px]">
+  <div class="login-container">
+    <article class="flex px-4 w-[700px]">
       <LoginForm />
     </article>
     <p v-if="error" class="text-red-500">lalala {{ error }} lalal</p>

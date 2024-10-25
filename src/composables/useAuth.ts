@@ -9,8 +9,11 @@ export function useAuth() {
     error.value = null;
     try {
       user.value = await registerUser(email, password);
+      console.log('user', JSON.stringify(user.value));
+      return user.value;
     } catch (err: any) {
-      error.value = err.message;
+      console.log('Acá hubo un error');
+      return error.value = err;
     }
   };
 
@@ -18,8 +21,11 @@ export function useAuth() {
     error.value = null;
     try {
       user.value = await loginUser(email, password);
+      console.log('user', JSON.stringify(user.value));
+      return user.value;
     } catch (err: any) {
-      error.value = err.message;
+      console.log('Acá hubo un error');
+      return error.value = err;
     }
   };
 

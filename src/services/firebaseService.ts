@@ -16,23 +16,13 @@ const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
 const registerUser = async (email: string, password: string) => {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    return userCredential.user;
-  } catch (error) {
-    console.error("Error al registrar el usuario:", error);
-    throw error;
-  }
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  return userCredential;
 };
 
 const loginUser = async (email: string, password: string) => {
-  try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    return userCredential.user;
-  } catch (error) {
-    console.error("Error al iniciar sesión:", error);
-    throw error;
-  }
+    return userCredential;
 };
 
 const logoutUser = async () => {
