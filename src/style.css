@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background: #111418; 
+}
+
+input, select{
+    @apply bg-white text-[#121212] rounded-lg px-2;
+}
+
+button{
+    @apply rounded-lg px-2;
+}
