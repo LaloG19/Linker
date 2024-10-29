@@ -3,9 +3,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 import LayoutAuth from '@/Shared/components/LayoutAuth.vue';
 import Login from '@/modules/Login/views/Login.vue';
 import Register from '@/modules/Register/views/Register.vue';
+import Home from './modules/Home/views/Home.vue';
 
 const routes = [
-  { path: '/', redirect: '/login' },
+  { 
+    path: '/Home',
+    name: 'Home',
+    component: Home
+  },
   {
     path: '/',
     component: LayoutAuth,
