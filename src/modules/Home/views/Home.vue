@@ -3,8 +3,8 @@ import { ref, onMounted, watch, computed } from "vue";
 import BackIcon from "../../../Shared/components/BackIcon.vue";
 
 /* Modo 0 = 0, 1 = register, 2 = login */
-const viewMode = ref(1);
-const viewPhase = ref(7);
+const viewMode = ref(0);
+const viewPhase = ref(0);
 const newRegister = ref({
   extension: "",
   phone: "",
@@ -105,6 +105,11 @@ const hardSkillsList = ref([
 ]);
 /* TEST */
 
+const handleResetView = () => {
+  viewMode.value = 0;
+  viewPhase.value = 0;
+};
+
 watch(viewMode, (value) => {
   console.log("Se cambió el valor del viewMode: " + value);
 });
@@ -141,11 +146,11 @@ watch(newRegister, (value) => {
     <main class="grow w-full p-8 flex">
       <!-- Formulario -->
       <section class="grow">
-        <BackIcon @click="viewMode = 0" />
+        <BackIcon @click="handleResetView()" />
 
         <div class="w-full p-16">
           <div class="grow flex flex-col gap-16">
-            <h1 class="title">{{ titlePhase }} {{ viewPhase }}</h1>
+            <h1 class="title">{{ titlePhase }}</h1>
 
             <!-- Fase 0 -->
             <div v-if="viewPhase == 0" class="grow flex flex-col gap-16">
