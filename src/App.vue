@@ -1,16 +1,28 @@
 <template>
-  <div>
-    <!-- <nav class="p-4 bg-gray-800 text-white flex justify-center space-x-4">
-      <router-link to="/login" class="hover:underline">Login</router-link>
-      <router-link to="/register" class="hover:underline">Register</router-link>
-    </nav> -->
-    
-    <router-view />
-  </div>
+  <v-app class="background-container">
+     <router-view />
+  </v-app>
 </template>
 
-<script lang="ts" setup>
+
+<script setup>
+import { RouterView, useRoute } from 'vue-router'
+
 </script>
 
-<style>
+<style scoped>
+
+.background-container {
+   margin: 0;
+   padding: 0;
+   width: 100vw;
+   overflow: hidden;
+   background-color: #191D22;
+   color: white;
+   overflow: hidden;
+
+}
+
+
+
 </style>
