@@ -18,8 +18,8 @@ const routes = [
     component: Home,
   },
   {
-    path: "/busqueda",
-    name: "busqueda",
+    path: "/fire",
+    name: "fire",
     component: BusquedaView,
   },
   {
@@ -27,14 +27,10 @@ const routes = [
     name: "ajustes",
     component: SettingVIew,
   },
+  
   {
-    path: "/likes",
-    name: "likes",
-    component: ProfileCard,
-  },
-  {
-    path: "/perfil",
-    name: "perfil",
+    path: "/account",
+    name: "account",
     component: ProfileView,
   },
   {
