@@ -78,6 +78,7 @@ const titlePhase = computed(() => {
 });
 
 /* TEST */
+const checkboxVar = ref(false);
 const softSkillsList = ref([
   "Comunicación",
   "Trabajo en equipo",
@@ -301,12 +302,12 @@ watch(newRegister, (value) => {
                     </span>
                     <!-- Checkbox, no tocar -->
                     <label
-                      class="relative inline-flex items-center cursor-pointer"
+                      class="relative inline-flex items-center cursor-pointer" @click="checkboxVar = !checkboxVar"
                     >
                       <input type="checkbox" class="hidden" />
                       <div
                         class="w-24 h-14 bg-white border-4 border-gray-300 rounded-full flex items-center justify-center transition-all duration-200"
-                        :class="true ? 'border-[#7239c7]' : ''"
+                        :class="checkboxVar ? 'border-[#7239c7]' : ''"
                       >
                         <svg
                           v-if="true"
@@ -343,7 +344,7 @@ watch(newRegister, (value) => {
             <div v-if="viewPhase == 6" class="grow flex flex-col gap-16">
               <div class="flex grow gap-8">
                 <div
-                  class="grow flex flex-row flex-wrap justify-center gap-4 mb-16 max-h-[864px] overflow-y-scroll"
+                  class="grow flex flex-row flex-wrap justify-center gap-4 mb-16 max-h-[1200px] overflow-y-scroll"
                 >
                   <span class="skill" v-for="skill in softSkillsList">
                     {{ skill }}
@@ -378,7 +379,7 @@ watch(newRegister, (value) => {
             <div v-if="viewPhase == 7" class="grow flex flex-col gap-16">
               <div class="flex grow gap-8">
                 <div
-                  class="grow flex flex-row flex-wrap justify-center gap-4 mb-16 max-h-[864px] overflow-y-scroll"
+                  class="grow flex flex-row flex-wrap justify-center gap-4 mb-16 max-h-[1200px] overflow-y-scroll"
                 >
                   <span class="skill" v-for="skill in softSkillsList">
                     {{ skill }}
@@ -418,8 +419,6 @@ watch(newRegister, (value) => {
                         ¿Qué modalidad de trabajo prefieres?
                     </span>
                     <input
-                      type="number"
-                      min="0"
                       class="grow border-2 border-[#3C444F] bg-black border-b-2 text-white text-3xl py-6 px-8"
                     />
                   </div>
@@ -527,7 +526,7 @@ watch(newRegister, (value) => {
   background: #111418;
 }
 .btnLogin {
-  @apply border-white border-2 font-bold uppercase text-white px-6 py-4 rounded-full tracking-[0.5em];
+  @apply border-white border-2 font-bold uppercase text-white p-6 rounded-full tracking-[0.5em];
 }
 .btnTel {
   @apply bg-[linear-gradient(45deg,_#3B0191,_#240151)] font-bold uppercase text-white p-8 rounded-full tracking-[0.75em] text-2xl;
